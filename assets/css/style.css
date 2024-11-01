@@ -1,0 +1,263 @@
+/* 
+ * Ucard
+ * @author RainaStudio
+ * @version 1.0.1
+ * @package ucard
+*/
+
+/* DemoTemplate 1 
+========================================
+*/
+.post-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 0px 30px;
+    margin: 0 auto 30px;
+}
+.post-col .entry {
+    position: relative;
+    z-index: 1;
+    display: block;
+    background: #FFFFFF;
+    min-width: 270px;
+    height: 420px;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+    font-family: 'ProximaNova', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+.post-col .entry:hover {
+    -webkit-box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+}
+.post-col .entry .thumbnail {
+    background: #000000;
+    height: 350px;
+    overflow: hidden;
+}
+.post-col .entry .thumbnail .entry-footer {
+    position: absolute;
+    top: 23.5px;
+    left: 0;
+    background: #e74c3c;
+    padding: 10px 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 0 15px 15px 0;
+    -moz-border-radius: 0 15px 15px 0;
+    -webkit-border-radius: 0 15px 15px 0;
+    line-height: 1;
+    z-index: 1;
+    margin: 0;
+}
+.post-col .entry .thumbnail .entry-footer a {
+    color: #FFFFFF;
+}
+.post-col .entry .thumbnail .like {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    text-align: center;
+    font-weight: 700;
+}
+/* Like Button */
+.like .fa {
+    font-size: 20px;
+}
+.like-button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: grey;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin: 0 auto;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+}
+.like-button .like-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e74c3c;
+    transform: scale(0);
+    transition: all .4s;
+    z-index: 0;
+}
+.like-button i.not-liked {
+    display: block;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+.like-button i.is-liked {
+    display: none;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+.like-button.is-active .like-overlay {
+    transform: scale(1);
+}
+.like-button.is-active i.not-liked {
+    display: none;
+}
+.like-button.is-active i.is-liked {
+    display: block;
+}
+@-webkit-keyframes bouncy {
+    from, to { -webkit-transform: scale(1, 1); }
+    25% { -webkit-transform: scale(0.9, 1.1); }
+    50% { -webkit-transform: scale(1.1, 0.9); }
+    75% { -webkit-transform: scale(0.95, 1.05); }
+}
+@keyframes bouncy {
+    from, to { transform: scale(1, 1); }
+    25% { transform: scale(0.9, 1.1); }
+    50% { transform: scale(1.1, 0.9); }
+    75% { transform: scale(0.95, 1.05);}
+}
+.bouncy {
+    -webkit-animation: bouncy 0.6s;
+    animation: bouncy 0.6s;
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.more-link {
+    white-space: nowrap;
+}
+.post-col .entry .thumbnail .entry-image {
+    display: block;
+    width: 120%;
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+    max-width: inherit;
+}
+.post-col .entry:hover .thumbnail .entry-image {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 0.6;
+}
+.post-col .entry .entry-content {
+    position: absolute;
+    bottom: 0;
+    background: #FFFFFF;
+    width: 100%;
+    padding: 30px;
+    -webkti-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+    -moz-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+    -ms-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+    -o-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+    transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+}
+.post-col .entry .entry-content p.entry-meta {
+    margin: -54.5px 0 10px 0;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+.post-col .entry .entry-content p.entry-meta .author-avatar {
+    margin-right: 10px;
+    float: left;
+}
+.post-col .entry .entry-content p.entry-meta .author-avatar .avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    outline: 0;
+    padding: 0;
+}
+.post-col .entry .entry-content p.entry-meta .postByBox {
+    float: left;
+    line-height: 16px;
+    padding-top: 30px;
+}
+.post-col .entry .entry-content p.entry-meta .postByBox .entry-author a {
+    text-transform: capitalize;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.post-col .entry .entry-content p.entry-meta .readTimeBox {
+    display: block;
+    position: relative;
+    line-height: 18px;
+    float: right;
+    margin-top: 30px;
+    width: auto;
+    margin-left: 0;
+}
+.post-col .entry .entry-content .entry-title, 
+.post-col .entry .entry-content .entry-title a, 
+.post-col .entry .entry-content .entry-title a:hover {
+    margin: 0;
+    padding: 0 0 10px;
+    color: #333333;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1;
+    border: 0;
+}
+.post-col .entry .entry-content .description {
+    display: none;
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.3em;
+    margin-top: 0;
+}
+.post-col .entry .entry-content .post-meta {
+    margin: 30px auto 0;
+    color: #999999;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 65rem;
+    justify-content: space-between;
+    font-size: 12px;
+    letter-spacing: normal;
+}
+.post-col .entry .entry-content .post-meta .timestamp .entry-time {
+    text-transform: capitalize;
+    letter-spacing: normal;
+}
+.post-col .entry .entry-content .post-meta .entry-comments-link::before {
+    display: none;
+}
+.post-col .entry .entry-content .post-meta .comments a, 
+.post-col .entry .entry-content .post-meta .comments a:hover {
+    color: #999999;
+    font-weight: inherit;
+    border: 0;
+    letter-spacing: normal;
+}
